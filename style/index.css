@@ -1,0 +1,69 @@
+body {
+    font-family: sans-serif;
+    background-color: #232737;
+}
+
+
+/* barra de navegacion */
+
+.navbar {
+    background-color: #050408;
+}
+
+
+
+.nav-link {
+    color: white;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.2s ease-out;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link:active {
+    color: white;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: #050408;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+
+.contenedorCards {
+    width: 90%;
+    margin: auto;
+}
+
+/* footer */
+
+footer {
+    background-color: #0e0b14;
+}
