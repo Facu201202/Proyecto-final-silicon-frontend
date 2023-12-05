@@ -16,7 +16,23 @@ const urlImage = "https://image.tmdb.org/t/p/original";
 
 //traemos los datos de la API con el fetch
 
-fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', options)
+let nameMovie;
+
+let urlBuscar = `https://api.themoviedb.org/3/search/movie?query=${nameMovie}&include_adult=true&language=en-US&page=1`;
+
+let url;
+
+for(i= 1; i <=10; i++){
+  let pagina = i;
+  url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${pagina}&sort_by=popularity.desc`;
+
+
+
+
+
+
+
+fetch(url, options)
   .then(response => response.json())
   .then(response => {
 
@@ -43,7 +59,7 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_v
 
       //agrega las imagenes
 
-      let imgUrl =  urlImage + pelicula.backdrop_path;
+      let imgUrl = urlImage + pelicula.backdrop_path;
 
       let img1 = document.createElement("div");
       img1.classList.add("img1");
@@ -52,7 +68,7 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_v
       let img2 = document.createElement("div");
       img2.classList.add("img2");
       img2.style.backgroundImage = "url(" + imgUrl + ")";
-      
+
       linkCard.appendChild(img1);
       linkCard.appendChild(img2);
 
@@ -93,47 +109,37 @@ fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_v
       category.appendChild(iconMovie);
       linkCard.appendChild(views);
       views.appendChild(iconViews);
-
-      
-
-     
-
     });
   })
 
+}
 
 // traemos el contenedor carrusel 
 
- 
+
 fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
-    .then(response => response.json())
-    .then(response => {
-       
-      //guardamos los datos en una variable
+  .then(response => response.json())
+  .then(response => {
 
-      const trending = response.results;
+    //guardamos los datos en una variable
 
-      console.log(trending)
+    const trending = response.results;
 
-      for (i = 0; i < 5; i++){
+    console.log(trending)
 
-        console.log(trending[i].backdrop_path)
+    for (i = 3; i < 8; i++) {
 
-        let carouselImg = document.getElementById("carouselImg" + i);
-        let imgUrl =  urlImage + trending[i].backdrop_path;
-        carouselImg.src = imgUrl;
+      console.log(trending[i].backdrop_path)
 
-        let carouselName = document.getElementById("name" + i);
-        carouselName.textContent = trending[i].title;
+      let carouselImg = document.getElementById("carouselImg" + (i - 3));
+      let imgUrl = urlImage + trending[i].backdrop_path;
+      carouselImg.src = imgUrl;
 
-        
-
-        console.log(carouselImg)
-      }
-    })
+      let carouselName = document.getElementById("name" + (i - 3));
+      carouselName.textContent = trending[i].title;
 
 
 
-
-
-    
+      console.log(carouselImg)
+    }
+  })
