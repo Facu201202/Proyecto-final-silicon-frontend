@@ -26,12 +26,6 @@ for(i= 1; i <=10; i++){
   let pagina = i;
   url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${pagina}&sort_by=popularity.desc`;
 
-
-
-
-
-
-
 fetch(url, options)
   .then(response => response.json())
   .then(response => {
