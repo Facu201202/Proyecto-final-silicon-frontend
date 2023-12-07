@@ -98,3 +98,13 @@ let url = `https://api.themoviedb.org/3/trending/movie/day?language=en-US`;
         views.appendChild(iconViews);
       });
     })
+
+
+// funcion buscar 
+
+const search = () => {
+
+  let searchMovie = document.getElementById("imputText").value;
+  localStorage.setItem("searchMovie", searchMovie);
+  location.href = "search.html"
+}

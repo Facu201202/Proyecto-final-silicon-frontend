@@ -7,7 +7,7 @@
   <title>pagina principal</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="../style/homepage.css">
+  <link rel="stylesheet" href="../style/search.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
     integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
@@ -49,73 +49,17 @@
     </nav>
   </header>
   <main>
-    <div id="carouselExampleCaptions" class="carousel carouselMain slide mt-5 pt-5" data-interval="3000">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-          aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
-          aria-label="Slide 5"></button>
-      </div>
-      <div class="carousel-inner justify-content-center">
-        <div class="carousel-item active">
-          <img id="carouselImg0" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="display-4" id="name0">First slide label</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img id="carouselImg1" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="display-4" id="name1">Second slide label</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img id="carouselImg2" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="display-4" id="name2">Third slide label</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img id="carouselImg3" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="display-4" id="name3">Third slide label</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img id="carouselImg4" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5 class="display-4" id="name4">Third slide label</h5>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
 
-    <div class="contenedorCards">
+    <div class="contenedorCards pt-5">
       <div class="contenedor-titulo mt-5">
-        <h3 id="vaa">Peliculas MovieDB (1 - 10)</h3>
+        <h3 id="searchTitle"></h3>
       </div>
       <div class="d-flex flex-wrap" id="cardsContainer">
       </div>
     </div>
 
   </main>
-  <footer class="text-center">
+  <footer class="text-center w-100" id="footer">
     <!-- Grid container -->
     <div class="container p-4 pb-4">
       <!-- Section: Social media -->
@@ -147,8 +91,8 @@
     </div>
     <!-- Grid container -->
 
-  </footer>
-  <script src="../javascrypt/homepage.js"></script>
+  </footer >
+  <script src="../javascrypt/search.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
