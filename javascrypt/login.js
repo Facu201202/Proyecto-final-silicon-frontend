@@ -69,25 +69,28 @@ function login() {
     console.log(`El usuario es ${usuario} y la contraseña es ${password}`)
 
     let error;
+    let vacio;
 
     //validacion del login
 
     if (usuario == "" && password == "") {
         alert("ingresar usuario y contraseña")
+
+    }
+
+    if(defaultUser.user == usuario && defaultUser.pass == password) {
+        location.href = "homepage.html"
+        error = true;
     }
     
-    for(i = 0; i <usuarios.length; i++){
-
-        if(defaultUser.user == usuario && defaultUser.pass == password) {
-            location.href = "homepage.html"
-            error = true;
-        }
-        else if(usuarios[i].emailRegister == usuario && usuarios[i].passwordRegister == password){
-            location.href = "homepage.html"
-            error = true;
+    if (usuarios != null){
+        for(i = 0; i <usuarios.length; i++){
+            if(usuarios[i].emailRegister == usuario && usuarios[i].passwordRegister == password){
+                location.href = "homepage.html"
+                error = true;
+            }
         }
     }
-
     if(error != true){
         alert("usuario o contraseña incorrecta");
     }

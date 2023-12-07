@@ -17,10 +17,27 @@ body {
 
 /* barra de navegacion */
 
+.nav-boton {
+  background-color: #512da8;
+  padding: 6px;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-boton:hover{
+  color: white;
+  background-color: #1a163f;
+}
+
+.navbar {
+  background-color: #050408;
+  border: 2px solid #1a163f;
+}
+
+
 .navbar {
   background-color: #050408;
 }
-
 
 
 .nav-link {
