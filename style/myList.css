@@ -20,7 +20,12 @@ body {
 .nav-boton {
   background-color: #512da8;
   padding: 6px;
-  text-decoration: none;
+  color: white;
+}
+
+.title-boton {
+  background-color: #512da8;
+  padding: 6px;
   color: white;
 }
 
@@ -29,15 +34,16 @@ body {
   background-color: #1a163f;
 }
 
+.nav-boton a {
+  color: white;
+  text-decoration: none;
+}
+
 .navbar {
   background-color: #050408;
   border: 2px solid #1a163f;
 }
 
-
-.navbar {
-  background-color: #050408;
-}
 
 
 .nav-link {
@@ -220,10 +226,7 @@ body {
 .card:hover .views,
 .card:hover .catagory {
   transform: translate(0);
-  cursor: pointer;
 }
-
-
 
 
 .carouselMain {
@@ -236,3 +239,5 @@ body {
 footer {
   background-color: #0e0b14;
 }
+
+

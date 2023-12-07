@@ -22,6 +22,13 @@ let urlBuscar = `https://api.themoviedb.org/3/search/movie?query=${nameMovie}&in
 
 let url;
 
+let myList = [];
+
+let navList = localStorage.getItem("myList");
+navList = JSON.parse(navList);
+console.log(navList)
+
+
 // bucle para tener mas de una pagina en pantalla
 for (i = 1; i <= 10; i++) {
   let pagina = i;
@@ -45,7 +52,6 @@ for (i = 1; i <= 10; i++) {
         cardsContainer.appendChild(card);
 
         let linkCard = document.createElement("a");
-        linkCard.href = "#";
 
         card.appendChild(linkCard);
 
@@ -87,25 +93,46 @@ for (i = 1; i <= 10; i++) {
         iconMovie.classList.add("fas");
         iconMovie.classList.add("fa-film");
 
-        let views = document.createElement("div");
-        views.classList.add("views");
+        // funcion para hacer una lista de peliculas favoritas
 
-        views.textContent = pelicula.popularity;
+        let addList = () => {
 
-        let iconViews = document.createElement("i");
-        iconViews.classList.add("far");
-        iconViews.classList.add("fa-eye");
+          if(navList != null){
+            navList.push(pelicula);
+            localStorage.setItem("myList", JSON.stringify(navList));
+          }else{
+            myList.push(pelicula)
+            console.log(myList)
+            localStorage.setItem("myList", JSON.stringify(myList));
+          }  
+        };
+
+        let botonList = document.createElement("div");
+        botonList.classList.add("views");
+
+        botonList.textContent = "Añadir +";
+
+        botonList.addEventListener("click", addList);
+
+
+
+        //==========================================================
 
         linkCard.appendChild(name);
         linkCard.appendChild(text);
         linkCard.appendChild(category);
         category.appendChild(iconMovie);
-        linkCard.appendChild(views);
-        views.appendChild(iconViews);
+        linkCard.appendChild(botonList);
+
       });
     })
 
 }
+
+
+
+
+
 
 // traemos el contenedor carrusel 
 
@@ -138,6 +165,5 @@ const search = () => {
   localStorage.setItem("searchMovie", searchMovie);
   location.href = "search.html"
 }
-
 
 
