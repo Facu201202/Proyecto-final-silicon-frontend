@@ -5,3 +5,4 @@ Cuenta con una pagina principal, una de tendencias, una seccion para agregar pel
 Datos por defecto para loguearse: 
 Email: user@gmail.com
 Password: 12345
+Wireframe: https://lucid.app/lucidspark/f77a8c16-01a4-49fc-83e7-5cdb98a1950f/edit?viewport_loc=-4140%2C-4341%2C9291%2C4286%2C0_0&invitationId=inv_bbfb6dcd-1cac-43fd-b85d-85d5743a8f6d
